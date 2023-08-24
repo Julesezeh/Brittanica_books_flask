@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os,json
 
@@ -17,20 +17,29 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
+from models import User,Book
 
-from .models import User,Book
 
 #Views
 @app.route("/",methods=["GET"])
 def index():
     try:
         users = User.query.all()
-        print(users)
-        users = json.dumps(users)
-        return (users)
+        user_list = []
+        for user in users:
+            user_data = {
+                "id":user.id,
+                "username":user.username,
+                "email":user.email,
+                "books":user.books
+            }
+            user_list.append(user_data)
+        # users = json.dumps(users)
+        return jsonify({"users":user_list})
+    
     except Exception as e:
         return {"Error":str(e)}
 
 
 if __name__ == "__main___":
-    app.run()
+    app.run(debug=True)
