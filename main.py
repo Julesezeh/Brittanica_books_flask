@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import os,json
-from flask_restx import Api,Resource,reqparse,inputs
+from flask_restx import Api,Resource,reqparse,inputs,fields
 
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
@@ -9,7 +9,10 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 api = Api(app)
 
-
+request_model = api.model('RequestModel',{
+    "username":fields.String(required=True,description="Username field is required"),
+    "email":fields.String(type=inputs.email,description="Email field is necessary")
+})
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
     base_dir, "database.db"
@@ -18,11 +21,30 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-from models import User,Book
+
+
+class User(db.Model):
+    __tablename__ = "users"
+    id = db.Column(db.Integer,primary_key=True)
+    username =  db.Column(db.String(length=200), unique=True)
+    email = db.Column(db.String)
+    books = db.relationship('Book',backref='users',lazy=True)
+
+    def __repr__(self):
+        return f"UID:{self.id} {self.username}"
+
+class Book(db.Model):
+    __tablename__  = "books"
+    id = db.Column(db.Integer,primary_key=True)
+    locccn = db.Column(db.Integer)
+    title = db.Column(db.Integer,unique=True)
+    owner_id = db.Column(db.Integer,db.ForeignKey("users.id"),nullable=False)
+    def __repr__(self):
+        return self.title
 
 todos = {}
 
-#Data validation
+#Data validator for Query parameters
 user_parser = reqparse.RequestParser()
 user_parser.add_argument('username',type=str,required=True,help="Name can not be blank")
 user_parser.add_argument('email',type=inputs.email,required=False,help="Email is optional")
@@ -31,14 +53,16 @@ user_parser.add_argument('email',type=inputs.email,required=False,help="Email is
 
 @api.route("/api/users")
 class User(Resource):
+    @api.expect(request_model,validate=True)
     def post(self):
-        args = user_parser.parse_args(request.json)
-        username = args['username']
-        email = args['email']
+        data = api.payload
+        username = data["username"]
+        email = data["email"]
+        print("User details",[username,email])
         user = User(username=username,email=email)
         db.session.add(user)
         db.session.commit()
-        db.session.refresh(user)
+        # db.session.refresh(user)
         return {"success":{"username":username,"email":email}}
 
 # @api.route("/todo")
