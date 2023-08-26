@@ -1,1 +1,0 @@
-APIs are going to be developed with flask-RESTx
