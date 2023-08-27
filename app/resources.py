@@ -5,4 +5,6 @@ api_namespace = Namespace("api")
 
 @api_namespace.route("/hello")
 class Hello(Resource):
-    pass
+    #Simply define http methods
+    def get(self):
+        return {"Hello":"This is being served from rest-x"}
