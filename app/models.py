@@ -9,6 +9,7 @@ class User(db.Model):
 class Book(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title = db.Column(db.String(70),unique=True)
+    locccn = db.Column(db.Integer)
     user_id = db.Column(db.ForeignKey("user.id"))
 
     user = db.relationship("User",back_populates="books")
