@@ -21,7 +21,7 @@ user_creation_schema = api.model("UserCreation",{
     "username":fields.String
 })
 
-book_creation_schema = api.model("UserCreation",{
+book_creation_schema = api.model("BookCreation",{
     "title":fields.String,
     "user_id":fields.Integer,
     "locccn":fields.Integer
