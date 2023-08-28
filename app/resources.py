@@ -51,6 +51,15 @@ class UserDetailAPI(Resource):
     def get(self,id):
         user = User.query.get(id)
         return user
+    
+    @api_namespace.marshal_with(user_schema)
+    @api_namespace.expect(user_creation_schema)
+    def put(self,id):
+        user = User.query.get(id)
+        user.username = api_namespace.payload["username"]
+        
+        db.session.commit()
+        return user,200
 
 
 @api_namespace.route("/books/<int:id>")
