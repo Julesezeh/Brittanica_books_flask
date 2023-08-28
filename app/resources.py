@@ -59,3 +59,14 @@ class BookDetailAPI(Resource):
     def get(self,id):
         book = Book.query.get(id)
         return book
+    
+    @api_namespace.marshal_with(book_schema)
+    @api_namespace.expect(book_creation_schema)
+    def put(self,id):
+        book = Book.query.get(id)
+        book.title = api_namespace.payload["title"]
+        book.user_id = api_namespace.payload["user_id"]
+        book.locccn  = api_namespace.payload["locccn"]
+        
+        db.session.commit()
+        return book,200
