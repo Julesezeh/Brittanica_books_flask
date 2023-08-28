@@ -9,5 +9,7 @@ book_schema = api.model("Book",{
 
 user_schema = api.model("User",{
     "id":fields.Integer,
-    "username":fields.String
+    "username":fields.String,
+    "books":fields.Nested(book_schema)
+
 })
