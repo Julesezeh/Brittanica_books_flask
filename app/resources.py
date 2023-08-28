@@ -60,6 +60,12 @@ class UserDetailAPI(Resource):
         
         db.session.commit()
         return user,200
+    
+    def delete(self, id):
+        user = User.query.get(id)
+        db.session.delete(user)
+        db.session.commit()
+        return {},204
 
 
 @api_namespace.route("/books/<int:id>")
@@ -79,3 +85,9 @@ class BookDetailAPI(Resource):
         
         db.session.commit()
         return book,200
+    
+    def delete(self,id):
+        book =  Book.query.get(id)
+        db.session.delete(book)
+        db.session.commit()
+        return {},204
