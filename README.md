@@ -14,25 +14,26 @@ Docs can be accessed at https://britanncaflask.pythonanywhere.com/
                 https://britanncaflask.pythonanywhere.com/api/books
 
 
-payload (Example Value)
-
+*payload (Example Value)*
+```js
 {
   "title": "string",
   "user_id": 0,
   "locccn": 0
 }
+```
 
 ### UPDATE A BOOK (PUT)
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
 
-payload (Example value)
-
+*payload (Example value)*
+```js
 {
   "title": "string",
   "user_id": 0,
   "locccn": 0
 }
-
+```
 ### DELETE A BOOK
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
 
@@ -47,20 +48,22 @@ payload (Example value)
                 https://britanncaflask.pythonanywhere.com/api/users
 
 
-payload (Example Value)
-
+*payload (Example Value)*
+```js
 {
   "username": "string"
 }
+```
 
 ### UPDATE A USER (PUT)
             https://britanncaflask.pythonanywhere.com/api/users/{id}
 
-payload (Example value)
-
+*payload (Example value)*
+```js
 {
   "username": "string"
 }
+```
 
 ### DELETE A USER (DELETE)
                 https://britanncaflask.pythonanywhere.com/api/users/{id}
