@@ -14,7 +14,7 @@ CREATE NEW BOOK (POST)
 ---------------
                 https://britanncaflask.pythonanywhere.com/api/books
 
-\n
+
 payload (Example Value)
 
 {
@@ -26,7 +26,7 @@ payload (Example Value)
 UPDATE A BOOK (PUT)
 -------------
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
-\n
+
 payload (Example value)
 
 {
@@ -39,8 +39,8 @@ DELETE A BOOK
 -------------
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
 
-                        \nUSERS
-                    -------------
+            USERS
+        -------------
 GET ALL USERS (GET)
 --------------
                 https://britanncaflask.pythonanywhere.com/api/users
@@ -53,7 +53,7 @@ CREATE NEW USER (POST)
 ---------------
                 https://britanncaflask.pythonanywhere.com/api/users
 
-\n
+
 payload (Example Value)
 
 {
@@ -63,7 +63,7 @@ payload (Example Value)
 UPDATE A USER (PUT)
 -------------
             https://britanncaflask.pythonanywhere.com/api/users/{id}
-\n
+
 payload (Example value)
 
 {
