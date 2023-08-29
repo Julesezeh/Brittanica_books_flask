@@ -1,4 +1,4 @@
-[Docs](https://britanncaflask.pythonanywhere.com/)
+[SWAGGER DOCUMENTATION](https://britanncaflask.pythonanywhere.com/)
 
 # BOOKS
 
