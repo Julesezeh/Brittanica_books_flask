@@ -2,12 +2,11 @@ Docs can be accessed at https://britanncaflask.pythonanywhere.com/
 
 # BOOKS
 
-GET ALL BOOKS (GET)
---------------
+## GET ALL BOOKS (GET)
+
                 https://britanncaflask.pythonanywhere.com/api/books
 
-GET SPECIFIC BOOK (GET)
-------------------
+## GET SPECIFIC BOOK (GET)
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
 
 
