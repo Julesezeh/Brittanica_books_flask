@@ -14,7 +14,7 @@ CREATE NEW BOOK (POST)
 ---------------
                 https://britanncaflask.pythonanywhere.com/api/books
 
-
+\n
 payload (Example Value)
 
 {
@@ -22,15 +22,11 @@ payload (Example Value)
   "user_id": 0,
   "locccn": 0
 }
-----------------------
 
-UPDATE A BOOK
+UPDATE A BOOK (PUT)
 -------------
-HTTP METHOD--> PUT
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/books/{id}
----------------------------------------------------------
-
+                https://britanncaflask.pythonanywhere.com/api/books/{id}
+\n
 payload (Example value)
 
 {
@@ -38,13 +34,12 @@ payload (Example value)
   "user_id": 0,
   "locccn": 0
 }
---------------------
 
 DELETE A BOOK
 -------------
                 https://britanncaflask.pythonanywhere.com/api/books/{id}
 
-                        USERS
+                        \nUSERS
                     -------------
 GET ALL USERS (GET)
 --------------
@@ -58,26 +53,22 @@ CREATE NEW USER (POST)
 ---------------
                 https://britanncaflask.pythonanywhere.com/api/users
 
+\n
 payload (Example Value)
 
 {
   "username": "string"
 }
----------------------
 
-UPDATE A USER
+UPDATE A USER (PUT)
 -------------
-HTTP METHOD--> PUT
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/users/{id}
----------------------------------------------------------
-
+            https://britanncaflask.pythonanywhere.com/api/users/{id}
+\n
 payload (Example value)
 
 {
   "username": "string"
 }
-----------------------
 
 DELETE A USER (DELETE)
 -------------
