@@ -55,7 +55,6 @@ GET ALL USERS
 HTTP METHOD--> GET
 ENDPOINT--
                 https://britanncaflask.pythonanywhere.com/api/users
----------------------------------------------------
 
 GET SPECIFIC USER
 -----------------
