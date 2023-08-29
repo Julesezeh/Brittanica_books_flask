@@ -1,20 +1,20 @@
 Docs can be accessed at https://britanncaflask.pythonanywhere.com/
 
-                    BOOKS
-                -------------
-GET ALL BOOKS
+                        BOOKS
+                    -------------
+GET ALL BOOKS (GET)
 --------------
-HTTP METHOD--> GET
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/books
----------------------------------------------------
+                https://britanncaflask.pythonanywhere.com/api/books
 
-CREATE NEW BOOK
+GET SPECIFIC BOOK (GET)
+------------------
+                https://britanncaflask.pythonanywhere.com/api/books/{id}
+
+
+CREATE NEW BOOK (POST)
 ---------------
-HTTP METHOD--> POST
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/books
----------------------------------------------------
+                https://britanncaflask.pythonanywhere.com/api/books
+
 
 payload (Example Value)
 
@@ -43,30 +43,21 @@ payload (Example value)
 
 DELETE A BOOK
 -------------
-HTTP METHOD--> DELETE 
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/books/{id}
---------------------------------------------------------
+                https://britanncaflask.pythonanywhere.com/api/books/{id}
 
-                    USERS
-                -------------
-GET ALL USERS
+                        USERS
+                    -------------
+GET ALL USERS (GET)
 --------------
                 https://britanncaflask.pythonanywhere.com/api/users
 
-GET SPECIFIC USER
+GET SPECIFIC USER (GET)
 -----------------
-HTTP METHOD--> GET
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/users{id}
--------------------------------------------------------
+                https://britanncaflask.pythonanywhere.com/api/users{id}
 
-CREATE NEW USER
+CREATE NEW USER (POST)
 ---------------
-HTTP METHOD--> POST
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/users
----------------------------------------------------        
+                https://britanncaflask.pythonanywhere.com/api/users
 
 payload (Example Value)
 
@@ -89,9 +80,6 @@ payload (Example value)
 }
 ----------------------
 
-DELETE A USER
+DELETE A USER (DELETE)
 -------------
-HTTP METHOD--> DELETE 
-ENDPOINT--
-https://britanncaflask.pythonanywhere.com/api/users/{id}
---------------------------------------------------------
+                https://britanncaflask.pythonanywhere.com/api/users/{id}
