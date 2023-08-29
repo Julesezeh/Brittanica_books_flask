@@ -1,7 +1,7 @@
 Docs can be accessed at https://britanncaflask.pythonanywhere.com/
 
-BOOKS
------
+#BOOKS
+
 GET ALL BOOKS (GET)
 --------------
                 https://britanncaflask.pythonanywhere.com/api/books
