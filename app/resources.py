@@ -24,7 +24,11 @@ class BooksCreateListAPI(Resource):
     @api_namespace.expect(book_creation_schema)
     @api_namespace.marshal_with(book_schema)
     def post(self):
-        book = Book(title=api_namespace.payload["title"], user_id=api_namespace.payload["user_id"], locccn=api_namespace.payload["locccn"])
+        book = Book(
+            title=api_namespace.payload["title"],
+            user_id=api_namespace.payload["user_id"],
+            locccn=api_namespace.payload["locccn"]
+            )
         db.session.add(book)
         db.session.commit()
         return book,201
